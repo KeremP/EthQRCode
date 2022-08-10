@@ -1,0 +1,37 @@
+{% load static %}
+{% csrf_token %}
+<html>
+    <head>
+        <title>ETHPay</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <script src="{% static 'js/main.js' %}"></script>
+    </head>
+
+    <body>
+
+        <div class="qr">
+            <img id="qr-code" src="" alt="Qr Code"/>
+            <span id="url"></span>
+            <div>
+                <label for="payment">Payment link?</label>
+                <input id="payment" type="checkbox" name="payment"/>
+            </div>
+            <div>
+                <input id="target" type="text" name="target" placeholder="Target address"/>
+                <input id="amount" type="text" name="amount" placeholder="Amount"/>
+            </div>
+            <div>
+                <input id="function" type="text" name="function" placeholder="Contract function (optional)"/>
+                <input id="params" type="text" name="params" placeholder="Function params"/>
+            </div>
+
+            <button id="submit">Generate url</button> 
+
+
+        </div>
+
+    </body>
+
+</html>
